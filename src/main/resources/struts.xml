@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD   
+Struts Configuration 2.1//EN"   
+"http://struts.apache.org/dtds/struts-2.1.dtd">  
+
+<struts>
+	<include file="struts-default.xml"/>
+	
+	<package name="query" extends="struts-default">
+	
+		<action name="users" class="com.walichin.controller.ListUserController">  
+			<result name="users">/WEB-INF/jsp/users_struts_spring.jsp</result>
+		</action>
+		  
+		<action name="UsersStrutsJdbc" class="com.walichin.controller.UsersStrutsJdbc">  
+			<result name="users">/WEB-INF/jsp/users_struts_jdbc.jsp</result>
+		</action>
+		  
+		<action name="UsersStrutsHib" class="com.walichin.controller.UsersStrutsHib">  
+			<result name="users">/WEB-INF/jsp/users_struts_hib.jsp</result>  
+		</action>
+		  
+	</package>  
+	
+    <package name="transaction" extends="struts-default">
+    
+		<action name="">
+		    <result>/WEB-INF/jsp/index.jsp</result>
+		</action>
+		
+		<action name="newUserInput">
+		    <result>/WEB-INF/jsp/newUser.jsp</result>
+		</action>
+		
+		<action name="newUser" class="com.walichin.controller.UserController">
+			<result name="input">/WEB-INF/jsp/newUser.jsp</result>
+			<result name="success">/WEB-INF/jsp/success.jsp</result>
+			<result name="error">/WEB-INF/jsp/error.jsp</result>
+		</action>
+    </package>
+    
+</struts>
